@@ -23,7 +23,7 @@ export default function AppSider() {
                     precision={2}
                     valueStyle={{ color: "#cf1322" }}
                     prefix={<ArrowDownOutlined />}
-                    suffix="%"
+                    suffix="%" 
                 />
             </Card>
         </Layout.Sider>
