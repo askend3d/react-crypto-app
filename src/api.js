@@ -4,14 +4,14 @@ export function fakeFetchCrypto() {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(cryptoData);
-        }, 1000);
+        }, 1);
     });
 }
 
-export function fakeFetchCryptoAssets() {
+export function fetchCryptoAssets() {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(cryptoAssets);
-        }, 1000);
+        }, 1);
     });
 }
