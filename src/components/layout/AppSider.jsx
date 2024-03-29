@@ -1,4 +1,4 @@
-import { Card, Layout, List, Spin, Statistic, Typography } from "antd";
+import { Card, Layout, List, Spin, Statistic, Typography, Tag } from "antd";
 import { ArrowUpOutlined, ArrowDownOutlined } from "@ant-design/icons";
 import { useEffect, useState } from "react";
 import { fakeFetchCrypto, fetchCryptoAssets } from "../../api";
@@ -7,6 +7,8 @@ import { percentDifference } from "../../utils";
 const siderStyle = {
     padding: "1rem",
 };
+
+
 
 export default function AppSider() {
     const [loading, setLoading] = useState(false);
@@ -61,26 +63,43 @@ export default function AppSider() {
                         }
                         suffix="$"
                     />
+                    
                     <List
                         size="small"
                         dataSource={[
                             {
                                 title: "Total Profit",
                                 value: asset.totalProfit,
+                                withTag: true,
                             },
                             {
                                 title: "Asset Amount",
                                 value: asset.amount,
+                                isPlain: true,
                             },
-                            {
-                                title: "Difference",
-                                value: asset.growPercent,
-                            }
+                            // {
+                            //     title: "Difference",
+                            //     value: asset.growPercent,
+                            // },
                         ]}
                         renderItem={(item) => (
                             <List.Item>
                                 <span>{item.title}</span>
-                                <span>{item.value}</span>
+                                {item.withTag && (
+                                    <Tag color={asset.grow ? "green" : "red"}>
+                                        {asset.growPercent}%
+                                    </Tag>
+                                )}
+                                <span type={asset.grow ? "success" : "danger"}>
+                                    {item.isPlain && item.value}
+                                </span>
+                                {!item.isPlain && (
+                                    <Typography.Text
+                                        type={asset.grow ? "success" : "danger"}
+                                    >
+                                        {item.value.toFixed(2)}$
+                                    </Typography.Text>
+                                )}
                             </List.Item>
                         )}
                     />
