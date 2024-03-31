@@ -3,5 +3,5 @@ export function percentDifference(a, b) {
 }
 
 export function capitalize(str) {
-     return str.charAt(0)
+     return str.charAt(0).toUpperCase() + str.slice(1);
 }

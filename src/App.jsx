@@ -1,19 +1,22 @@
-import { Layout } from 'antd';
-import AppHeader from './components/layout/AppHeader';
-import AppSider from './components/layout/AppSider';
-import AppContent from './components/layout/AppContent';
-import AppFooter from './components/layout/AppFooter';
+import { Layout } from "antd";
+import AppHeader from "./components/layout/AppHeader";
+import AppSider from "./components/layout/AppSider";
+import AppContent from "./components/layout/AppContent";
+import AppFooter from "./components/layout/AppFooter";
+import {CryptoContextProvider} from "./context/cryptoContext";
 
 function App() {
     return (
-        <Layout>
-          <AppHeader />
+        <CryptoContextProvider>
             <Layout>
-                <AppSider />
-                <AppContent />
+                <AppHeader />
+                <Layout>
+                    <AppSider />
+                    <AppContent />
+                </Layout>
+                <AppFooter />
             </Layout>
-          <AppFooter/>
-        </Layout>
+        </CryptoContextProvider>
     );
 }
 
