@@ -1,8 +1,26 @@
-# React + Vite
+# Crypto Analysis Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Добро пожаловать в Crypto Analysis Web Application! Этот проект представляет собой веб-приложение на основе ReactJS, которое предоставляет пользователям анализ и отслеживание реального времени рынка криптовалют.
 
-Currently, two official plugins are available:
+## Возможности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Данные и анализ рынка криптовалют в реальном времени
+- Отслеживание нескольких криптовалют
+- Исторические данные и построение графиков
+- Настраиваемое управление портфелем
+
+## Начало работы
+
+Чтобы начать работу с Crypto Analysis Web Application, выполните следующие шаги:
+
+1. Скопируйте репозиторий
+2. Установите зависимости с помощью `npm install`
+3. Запустите приложение с помощью `npm run dev`
+4. Откройте приложение в браузере по адресу `http://localhost:5173`
+
+## Используемые технологии
+
+- ReactJS
+- Ant Design
+- [Api](https://coinstats.app/) 
+
