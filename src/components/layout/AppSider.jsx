@@ -1,4 +1,4 @@
-import { Card, Layout, List, Spin, Statistic, Typography, Tag } from "antd";
+import { Card, Layout, List, Statistic, Typography, Tag } from "antd";
 import { ArrowUpOutlined, ArrowDownOutlined } from "@ant-design/icons";
 import { capitalize } from "../../utils";
 import { useContext } from "react";
@@ -9,11 +9,8 @@ const siderStyle = {
 };
 
 export default function AppSider() {
-    const { loading, assets } = useContext(CryptoContext);
+    const { assets } = useContext(CryptoContext);
 
-    if (loading) {
-        return <Spin fullscreen />;
-    }
     return (
         <Layout.Sider width="25%" style={siderStyle}>
             {assets.map((asset) => (
