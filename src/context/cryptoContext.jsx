@@ -9,7 +9,6 @@ export const CryptoContext = createContext({
 });
 
 
-// eslint-disable-next-line react/prop-types
 export function CryptoContextProvider({ children }) {
     const [loading, setLoading] = useState(false);
     const [crypto, setCrypto] = useState([]);
