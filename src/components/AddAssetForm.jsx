@@ -26,7 +26,7 @@ function AddAssetForm() {
                         />{" "}
                         {option.data.label}
                     </Space>
-                )}
+                )} 
             />
         );
     }
