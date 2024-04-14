@@ -57,7 +57,7 @@ function AddAssetForm() {
       </Flex>
       <Divider />
       <Form.Item
-        label="Amount"
+        label="Amount" 
         name="amount"
         rules={[{ required: true, 
           type:'number',
