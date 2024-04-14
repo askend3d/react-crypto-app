@@ -12,6 +12,33 @@ function AddAssetForm() {
 
 
   if (!coin) {
+    const [coin, setCoin] = useState(null);
+    const { crypto } = useCrypto();
+    if (!coin) {
+        return (
+            <Select
+                style={{ width: "100%" }}
+                onSelect={(v) => setCoin(crypto.find((c) => c.id === v))}
+                onClick={() => setSelect((prev) => !prev)}
+                placeholder="Select coin"
+                options={crypto.map((coin) => ({
+                    label: coin.name,
+                    value: coin.id,
+                    icon: coin.icon,
+                }))}
+                optionRender={(option) => (
+                    <Space>
+                        <img
+                            style={{ width: 24 }}
+                            src={option.data.icon}
+                            alt={option.data.label}
+                        />{" "}
+                        {option.data.label}
+                    </Space>
+                )} 
+            />
+        );
+    }
     return (
       <Select
         style={{ width: "100%" }}
